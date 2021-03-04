@@ -1,5 +1,5 @@
 import React from 'react';
-import {  FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 import ListItem from '../ListItem/ListItem';
 
@@ -18,13 +18,13 @@ const infos = [
     },
 ];
 
-const ListOfItems = () => {
+const ListOfItems = ({navigation}) => {
     return (
         <View>
             <Text style={styles.header}>List of items:</Text>
             <FlatList
                 data={infos}
-                renderItem={({item}) => <ListItem info={item}/>}
+                renderItem={({item}) => <ListItem info={item} navigation={navigation}/>}
                 keyExtractor={(item) => item.name}
             />
         </View>
@@ -34,7 +34,7 @@ const ListOfItems = () => {
 const styles = StyleSheet.create({
     header: {
         fontSize: 18,
-        marginBottom: 5
+        margin: 5
     }
 });
 

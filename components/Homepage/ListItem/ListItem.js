@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
-const ListItem = ({info}) => {
+const ListItem = ({info, navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.productInfo}>
@@ -11,10 +11,10 @@ const ListItem = ({info}) => {
             </View>
                 
             <View style={styles.actions}>
-                <TouchableOpacity style={styles.icon} onPress={() => console.log('Entered editing!')}>
+                <TouchableOpacity style={styles.icon} onPress={() => navigation.navigate('EditItem')}>
                     <Text>Edit</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.icon} onPress={() => console.log('Entered deleting!')}>
+                <TouchableOpacity style={styles.icon} onPress={() => console.log('Brisanje pokrenuto')}>
                     <Text>Delete</Text>
                 </TouchableOpacity>
             </View>
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     container: {
         display: 'flex',
         flexDirection: 'row',
-        margin: 2
+        margin: 4
     },  
     productInfo: {
         display: 'flex',
@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
     },
     actions: {
         display: 'flex',
-        flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between'
     },

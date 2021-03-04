@@ -3,11 +3,11 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Header = () => {
+const Header = ({ navigation }) => {
     return (
         <View style={styles.header}>
             <Text style={styles.headerText}>Wishlist</Text>
-            <TouchableOpacity style={styles.icon} onPress={() => console.log('You tapped the button!')}>
+            <TouchableOpacity style={styles.icon} onPress={() => navigation.navigate('AddItem')}>
                 <Icon name="plus" size={45} color="#000" />
             </TouchableOpacity>
         </View>
